@@ -19,7 +19,7 @@ public class EmptyAccountTask implements Database.Batchable<sObject> {
         System.debug('Ici');
         System.debug(scope);
         for (Account acc:scope){
-            Task t = new Task (Subject ='Call',Status ='Not Started',Priority ='Normal',WhatId = acc.Id);
+            Task t = new Task (Subject ='Call',Status ='Not Started',Priority ='Normal',RecurrenceRegeneratedType = 'After date completed',RecurrenceInterval = 5,WhatId = acc.Id);
             insert t;
         }
     }

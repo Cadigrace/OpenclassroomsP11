@@ -21,7 +21,7 @@ public class TestOrderActivation {
         } catch(Exception e){
             thereIsException = true;
         }
-       // Dans ce cas l'order n'a pas d'order Item, l'activation devrait être stoppée par le Trigger 
+       // Dans ce cas l'order n'a pas d'order Item, il y a bien une exception, l'erreur est déclenchée 
        System.assert(thereIsException == true);
      
     }
