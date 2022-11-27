@@ -13,7 +13,7 @@ public with sharing class OrderService {
 		List <Order> orders =[SELECT Id FROM Order WHERE AccountId =: od.AccountId];
         if (orders.isEmpty()){
         	Account a = [SELECT Id, Active__c FROM Account WHERE Id =: od.AccountId];
-           	a.Active__c = 'No';
+           	a.Active__c = false;
             update a;
         }
 

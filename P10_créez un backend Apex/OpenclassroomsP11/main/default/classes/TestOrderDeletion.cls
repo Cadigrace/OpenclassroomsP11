@@ -3,7 +3,7 @@
 public class TestOrderDeletion {
     @isTest static void Test(){
         //Account creation
-        Account acc = new Account(Name ='Test account',Active__c = 'Yes');
+        Account acc = new Account(Name ='Test account',Active__c = true);
         insert acc;
         
         //Order creation
@@ -17,7 +17,7 @@ public class TestOrderDeletion {
         Test.stopTest();
 		//System.assertNotEquals('Yes',acc.Active__c);
 		Account a = [SELECT Id, Active__c FROM Account WHERE Name ='Test account'];
-        System.assertEquals('No',a.Active__c);
+        System.assertEquals(false,a.Active__c);
         
         
        
